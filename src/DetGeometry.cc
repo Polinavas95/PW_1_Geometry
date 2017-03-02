@@ -1,4 +1,8 @@
-
+//Вариант 4
+//
+//Реализовать геометрию со следующими параметрами:
+//Расположить в плоскости XZ G4Trd G4CutTubs G4BoX и G4Sphere по вершинам вписанного в окружность квадрата
+//в плоскости Y фигуры распологаться одна над другой
 
 #include "DetGeometry.hh"
 
@@ -16,7 +20,10 @@ DetGeometry::DetGeometry() {
 DetGeometry::~DetGeometry() {}
 
 G4VPhysicalVolume* DetGeometry::Construct(){
-
+    G4Material* t_material = nist->FindOrBuildMaterial("G4_Fe");
+    G4Material* ct_material = nist->FindOrBuildMaterial("G4_ANTHRACENE");
+    G4Material* b_material = nist->FindOrBuildMaterial("G4_BARIUM_FLUORIDE");
+    G4Material* s_material = nist->FindOrBuildMaterial("G4_BGO");
 
     return physWorld;
 }
